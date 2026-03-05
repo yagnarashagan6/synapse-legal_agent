@@ -31,7 +31,7 @@ export function Dashboard() {
         <div className="flex-1 space-y-8 min-w-0">
           
           {/* Top Metric Cards Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
             <MetricCard icon={<Shield className="text-blue-500" size={24} />} value="47" label="Active Trademark Monitoring" />
             <MetricCard icon={<AlertOctagon className="text-danger" size={24} />} value="2" label="High Risk Filings" />
             <MetricCard icon={<Edit3 className="text-warning" size={24} />} value="5" label="AI Drafts Pending Validation" />
@@ -44,13 +44,13 @@ export function Dashboard() {
           {/* Priority Alerts Section */}
           <div className="border border-red-200 rounded-xl overflow-hidden shadow-sm relative pt-6 bg-white">
             <div className="absolute top-0 left-0 right-0 h-1 bg-danger"></div>
-            <div className="px-6 mb-4">
+            <div className="px-4 md:px-6 mb-4">
               <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
                 <AlertOctagon className="text-danger" size={20} />
                 Priority Alerts
               </h2>
             </div>
-            <div className="px-6 pb-6 space-y-4">
+            <div className="px-4 md:px-6 pb-6 space-y-4">
               <AlertCard 
                 type="danger"
                 title="Opposition Window Closing – TECHVISION PLUS"
@@ -96,7 +96,7 @@ export function Dashboard() {
               primaryAction
             />
 
-            <div className="bg-card rounded-xl border border-border shadow-sm p-6 flex flex-col h-full hover:shadow-md transition-shadow">
+            <div className="bg-card rounded-xl border border-border shadow-sm p-4 md:p-6 flex flex-col h-full hover:shadow-md transition-shadow">
               <h3 className="text-lg font-semibold text-slate-800 mb-6">Newsletter Intelligence</h3>
               <div className="space-y-4 mb-6 flex-1">
                 <div className="flex justify-between items-center border-b border-slate-100 pb-3">
@@ -115,7 +115,7 @@ export function Dashboard() {
               <Button variant="outline" className="w-full bg-slate-50 border-slate-200 text-sm font-medium">Edit Newsletter</Button>
             </div>
 
-            <div className="bg-card rounded-xl border border-border shadow-sm p-6 flex flex-col h-full hover:shadow-md transition-shadow">
+            <div className="bg-card rounded-xl border border-border shadow-sm p-4 md:p-6 flex flex-col h-full hover:shadow-md transition-shadow">
               <h3 className="text-lg font-semibold text-slate-800 mb-6">Marketing & Visibility</h3>
               <div className="space-y-4 mb-6 flex-1">
                 <div className="flex justify-between items-center border-b border-slate-100 pb-3">
@@ -140,10 +140,10 @@ export function Dashboard() {
             
             {/* Human Validation Section */}
             <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-               <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 border-l-4 border-l-warning">
+               <div className="bg-slate-50 px-4 md:px-6 py-4 border-b border-slate-200 border-l-4 border-l-warning">
                  <h3 className="font-bold text-slate-800">Human Validation Required</h3>
                </div>
-               <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div className="p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                  <ValidationCard 
                     title="SaaS Agreement – TechVision"
                     statusText="clauses approved"
@@ -174,7 +174,7 @@ export function Dashboard() {
 
             <div className="space-y-6">
               {/* Knowledge Core Integrity */}
-              <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 pb-2">
+              <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 md:p-6 pb-2">
                 <h3 className="font-bold text-slate-800 mb-6 flex items-center gap-2">
                   <ShieldCheck className="text-success" size={20} />
                   Knowledge Core Integrity
@@ -203,7 +203,7 @@ export function Dashboard() {
               </div>
 
                {/* AI Operational Summary Card */}
-              <div className="bg-gradient-to-br from-[#1E293B] to-[#0F1B2A] rounded-xl border border-[#B89B5E]/30 shadow-lg p-6 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#1E293B] to-[#0F1B2A] rounded-xl border border-[#B89B5E]/30 shadow-lg p-4 md:p-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-4 opacity-20"><Bot size={100} className="text-[#B89B5E]"/></div>
                 <h3 className="font-bold text-white mb-6 relative z-10 flex items-center gap-2">
                   <Activity className="text-[#B89B5E]" size={20} />
@@ -235,7 +235,7 @@ export function Dashboard() {
 
         {/* Right Sidebar - Recent Activity Panel */}
         <div className="w-full lg:w-[320px] shrink-0">
-          <div className="bg-white rounded-xl border border-slate-200 shadow-sm h-full max-h-[calc(100vh-140px)] flex flex-col sticky top-28">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm lg:sticky lg:top-8">
             <div className="p-6 border-b border-slate-100 shrink-0">
               <h3 className="font-bold text-slate-800 flex items-center gap-2">
                 <Activity size={18} className="text-slate-400" /> 
@@ -243,7 +243,7 @@ export function Dashboard() {
               </h3>
             </div>
             
-            <div className="overflow-y-auto flex-1 p-2 space-y-1">
+            <div className="p-2 space-y-1">
               <ActivityCard icon={<FileText size={16} />} title="AI Draft Generated" time="10 mins ago" iconBgColor="bg-blue-50 text-blue-500" />
               <ActivityCard icon={<Database size={16} />} title="TMView Database Synced" time="2 hours ago" iconBgColor="bg-green-50 text-green-500" />
               <ActivityCard icon={<Mail size={16} />} title="Newsletter Draft Created" time="5 hours ago" iconBgColor="bg-purple-50 text-purple-500" />

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 
@@ -6,14 +7,16 @@ interface DashboardLayoutProps {
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-background font-inter font-sans">
-      <Sidebar />
-      <div className="flex-1 ml-[260px] flex flex-col h-screen overflow-hidden">
-        <main className="flex-1 overflow-x-hidden overflow-y-auto w-full">
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      <div className="flex-1 lg:ml-[280px] flex flex-col min-h-screen">
+        <main className="flex-1 w-full">
           <div className="w-full mx-auto pb-12">
-            <Header />
-            <div className="p-8">
+            <Header onMenuClick={() => setIsSidebarOpen(true)} />
+            <div className="px-4 md:px-8 py-6 md:py-8">
               {children}
             </div>
           </div>

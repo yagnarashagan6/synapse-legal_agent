@@ -20,7 +20,7 @@ export function ValidationCard({ title, statusText, statusRatio, primaryAction, 
         </span>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         <Button size="sm" className="w-full bg-slate-900 text-white hover:bg-slate-800">
           {primaryAction}
         </Button>
