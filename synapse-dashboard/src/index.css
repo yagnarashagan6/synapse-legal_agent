@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F5F7FA;
+  --color-sidebar: #0F1B2A;
+  --color-gold: #B89B5E;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --color-card: #FFFFFF;
+  --color-border: #E5E7EB;
+  
+  --font-inter: "Inter", "sans-serif";
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: #1e293b; /* slate-800 */
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
